@@ -23,6 +23,7 @@ class ResponsesController < ApplicationController
 
     respond_to do |format|
       if @response.save
+        BoardChannel.broadcast_to(@response.board, @response.body)
         format.html { redirect_to @response, notice: 'Response was successfully created.' }
         format.json { render :show, status: :created, location: @response }
       else
