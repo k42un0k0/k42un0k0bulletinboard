@@ -1,2 +1,0 @@
-class Timetable < ApplicationRecord
-end
