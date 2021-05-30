@@ -1,5 +1,5 @@
 {
-  "name": "k42un0k0-anime-listings",
+  "name": "k42un0k0-bulletin-boards",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
