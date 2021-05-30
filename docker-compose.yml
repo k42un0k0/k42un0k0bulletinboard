@@ -1,6 +1,6 @@
 version: "3"
 services:
-  app:
+  app: &app
     build: ./
     volumes:
       - ./:/app
@@ -12,6 +12,16 @@ services:
       sh -c "bundle i && bundle exec rails server -b 0.0.0.0"
     depends_on:
       - db
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: webpacker
+
+  webpacker:
+    <<: *app
+    command: /app/bin/webpack-dev-server
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    ports:
+      - "3035:3035"
   db:
     image: mysql:5.7
     restart: always
