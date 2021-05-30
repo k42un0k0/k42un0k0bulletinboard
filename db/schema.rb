@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2021_05_30_110506) do
   end
 
   create_table "responses", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "boards_id", null: false
+    t.bigint "board_id", null: false
     t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["boards_id"], name: "index_responses_on_boards_id"
+    t.index ["board_id"], name: "index_responses_on_board_id"
   end
 
 end

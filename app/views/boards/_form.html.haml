@@ -1,4 +1,5 @@
 = form_for @board do |f|
+  = f.text_field :title
   - if @board.errors.any?
     #error_explanation
       %h2= "#{pluralize(@board.errors.count, "error")} prohibited this board from being saved:"
