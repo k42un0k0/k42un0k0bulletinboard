@@ -5,7 +5,12 @@
 - cqrsも組み込めたらおもろい
 - rails 4くらいから触ってないから差分を学ぶ
 
-# README
+## メモ
+
+- serviceworker
+  - キャッシュ周りの操作をするとwebpacker側のファイルを取れなくてエラーになる
+
+## README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
