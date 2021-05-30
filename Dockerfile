@@ -6,4 +6,4 @@ COPY ./Gemfile /app/Gemfile
 COPY ./Gemfile.lock /app/Gemfile.lock
 
 RUN apk update &&\
-    apk add build-base mariadb-dev tzdata --update --no-cache
+    apk add build-base mariadb-dev tzdata nodejs yarn --update-cache --no-cache
