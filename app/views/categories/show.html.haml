@@ -1,0 +1,10 @@
+%p#notice= notice
+
+.name= @category.name
+
+- @category.boards.each do |board|
+  .board__title= board.title
+
+= link_to 'Edit', edit_category_path(@category)
+\|
+= link_to 'Back', categories_path

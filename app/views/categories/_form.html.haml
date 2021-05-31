@@ -1,0 +1,14 @@
+= form_for @category do |f|
+  = f.text_field :name
+  - Board.all.each do |board|
+    %label(for="board-#{board.id}")= board.title
+    = f.check_box :board_ids, {id: "board-#{board.id}", multiple: true, include_hidden: false}, board.id
+  - if @category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+      %ul
+        - @category.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'
